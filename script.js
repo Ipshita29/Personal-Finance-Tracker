@@ -272,6 +272,26 @@ function updateBalance() {
     balanceElement.classList.add("positive-balance");
   }
 }
+  // Change tip every 5 seconds
+  const tips = [
+    "Start by tracking all your expenses!",
+    "Save at least 20% of your income every month.",
+    "Avoid unnecessary subscriptions.",
+    "Use cash envelopes for discretionary spending.",
+    "Invest in high-interest savings accounts.",
+    "Set short-term and long-term saving goals."
+  ];
+
+  let tipIndex = 0;
+  const tipElement = document.getElementById("tip-text");
+
+  function cycleTips() {
+    tipIndex = (tipIndex + 1) % tips.length;
+    tipElement.textContent = tips[tipIndex];
+  }
+
+  setInterval(cycleTips, 5000);
+
 
 window.addEventListener("DOMContentLoaded", () => {
   // Set initial balance value

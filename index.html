@@ -94,55 +94,70 @@
     </div>
 
     <section class="main-content" id="tracker">
-      <div class="head-text">
-        <h1>Access Your Personal Finance Tracker</h1>
-        <div class="under-head-text"></div>
+  <div class="head-text">
+      <h1>Access Your Personal Finance Tracker</h1>
+      <div class="under-head-text"></div>
+  </div>
+  <br />
+
+  <div class="tracker-part">
+      <div class="balance-card">
+          <div class="tracker-balance">
+              Current Balance: <span id="balance" class="current-balance"></span>
+          </div>
       </div>
-      <br />
 
-      <div class="tracker-part">
-        <div class="tracker-balance">
-          Current Balance: <span id="balance" class="current-balance"></span>
-        </div>
-
-        <div class="currency-filter">
-          <div class="filter-left">
-            <label for="currency">Select Currency:</label>
-            <select id="currency" onchange="updateBalance()">
-              <option value="USD">USD</option>
-              <option value="EUR">EUR</option>
-              <option value="INR" selected>INR</option>
-            </select>
+      <div class="filter-controls">
+          <div class="currency-filter">
+              <label for="currency">Currency:</label>
+              <select id="currency" class="tracker-select" onchange="updateBalance()" aria-label="Select Currency">
+                  <option value="USD">USD</option>
+                  <option value="EUR">EUR</option>
+                  <option value="INR" selected>INR</option>
+              </select>
           </div>
-          <div class="filter-right">
-            <label for="text" class="date-box">Choose Date:</label>
-            <input type="date" id="date" placeholder="Date" />
+          <div class="date-filter">
+              <label for="date" class="date-box">Date:</label>
+              <input type="date" id="date" class="tracker-input" placeholder="Date" aria-label="Choose Date" />
           </div>
-        </div>
+      </div>
 
-        <div class="transaction-form">
-          <input type="text" id="description" placeholder="Description" />
-          <input type="number" id="amount" placeholder="Amount" />
-          <select id="type">
-            <option value="income">Income</option>
-            <option value="expense">Expense</option>
+      <div class="transaction-form">
+          <input type="text" id="description" class="tracker-input" placeholder="Description" required aria-label="Transaction Description"/>
+          <input type="number" id="amount" class="tracker-input" placeholder="Amount" required aria-label="Transaction Amount"/>
+          <select id="type" class="tracker-select" required aria-label="Transaction Type">
+              <option value="income">Income</option>
+              <option value="expense">Expense</option>
           </select>
-          <button onclick="addTransaction()">Add Transaction</button>
-          <button onclick="handleDownload()">Export</button>
-        </div>
-        <div class="table-part" id="table-part">
-          <table id="transaction-table">
-            <tr>
-              <th>Date</th>
-              <th>Description</th>
-              <th>Amount</th>
-              <th>Type</th>
-              <th>Action</th>
-            </tr>
-          </table>
-        </div>
+          <button onclick="addTransaction()" class="add-btn">
+              <i class="fas fa-plus"></i> Add
+          </button>
+          <button onclick="handleDownload()" class="export-btn">
+              <i class="fas fa-file-export"></i> Export
+          </button>
       </div>
-    </section>
+      <!-- Saving Tips Card -->
+      <div class="saving-tips">
+          <h2>Saving Tips</h2>
+          <p id="tip-text">Start by tracking all your expenses!</p>
+      </div>
+
+      <div class="table-part" id="table-part">
+          <table id="transaction-table">
+              <tr>
+                  <th>Date</th>
+                  <th>Description</th>
+                  <th>Amount</th>
+                  <th>Type</th>
+                  <th>Action</th>
+              </tr>
+          </table>
+      </div>
+      
+  </div>
+  
+</section>
+
 
     <section class="how-it-works" id="how-it-works">
       <div class="head-text">

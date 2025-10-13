@@ -408,234 +408,374 @@ img {
   height: auto;
 }
 
-/* main-content */
-/* #tracker{
-    border: 2px solid #ff8c00;
-   } */
+/* ==================================== */
+/* === TRACKER SECTION: PROFESSIONAL MINIMAL ELEVATION === */
+/* ==================================== */
+
+/* Centering and Container Styling (Refined colors for minimal look) */
 .main-content {
+  /* Assuming the container will sit on a light background, change text color */
+  color: #e4e8f3; 
   width: 90%;
-  max-width: 1100px;
-  justify-content: space-between;
-  align-items: center;
+  max-width: 1200px; /* Wider for spacious feel */
   margin: 0 auto;
-  height: 80vh;
-  padding: 100px 20px 20px;
-  color: #ffffff;
-  flex-direction: row;
-  box-sizing: border-box;
+  padding-top: 60px; /* Reduced padding for cleaner start */
 }
 
-.head-text {
-  margin-top: 8%;
-  text-align: center;
-  color: #ffffff;
-}
-.under-head-text {
-  width: 29px;
-  height: 5px;
-  margin-left: 48%;
-  margin-top: 10px;
-  background-color: #ff8c00;
-}
-
+/* Main Tracker Card: Soft, Elevated Card */
 .tracker-part {
   width: 100%;
-  max-width: 1280px;
-  margin: 0;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
+  max-width: 1000px;
+  margin: 40px auto;
+  border-radius: 16px; /* Slightly less rounded */
+  padding: 40px;
   box-sizing: border-box;
-  background-color: #0b0081;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  overflow-y: auto;
+  
+  /* Crisp white background */
+  background-color: #ffffff; 
+  
+  /* Soft, professional shadow for lift */
+  box-shadow: 
+    0 10px 20px rgba(0, 0, 0, 0.08),  /* Main diffused shadow */
+    0 4px 6px -1px rgba(0, 0, 0, 0.05); /* Subtle top shadow */
+  
+  border: 1px solid #e5e7eb; /* Minimal definition border */
 }
 
-.tracker-h1 {
-  text-align: center;
+/* Balance Card: High-Impact Focal Point (Deep Branding) */
+.balance-card {
+    /* Deep primary blue for authority */
+    background: linear-gradient(135deg, #1e3a8a 0%, #172554 100%); 
+    color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    text-align: center;
+    /* Softened, brand-focused shadow */
+    box-shadow: 0 10px 20px rgba(30, 58, 138, 0.5); 
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    /* Removing the slight 3D tilt for a flatter, modern look */
+    transform: none; 
+}
+
+.balance-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 15px 30px rgba(30, 58, 138, 0.7);
 }
 
 .tracker-balance {
-  text-align: center;
-  font-size: 24px;
-  margin-bottom: 20px;
-  font-weight: bolder;
-  color: #0b0081;
-  background-color: #dde8ff;
-  padding: 12px;
+    font-size: 16px; 
+    font-weight: 500;
+    opacity: 0.8;
+    letter-spacing: 1px;
+    text-transform: uppercase; /* More professional header style */
 }
 
 .current-balance {
-  font-size: 24px;
-  font-weight: bold;
+    font-size: 52px; /* Bigger impact, modern font size */
+    font-weight: 800;
+    color: #ffc107; /* Modern gold/yellow for currency focus */
+    display: block;
+    margin-top: 5px;
+    letter-spacing: -1px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
+
 .negative-balance {
-  color: #ff0000;
+  color: #dc2626 !important; /* Brighter, modern red */
 }
 .positive-balance {
-  color: #00ff00;
+  color: #059669 !important; /* Deeper, modern green */
+}
+
+/* Input/Filter Controls */
+.filter-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e5e7eb; /* Subtle separator */
+}
+
+.currency-filter, .date-filter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #4b5563; /* Muted text color */
+    font-weight: 600; 
+    font-size: 15px;
 }
 
 .transaction-form {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  gap: 20px;
 }
 
-.transaction-form input[type="text"],
-.transaction-form input[type="number"],
-.transaction-form select,
-.transaction-form input[type="date"] {
-  margin-right: 10px;
-  padding: 5px;
-  font-size: 16px;
-  border-radius: 3px;
-  color: #0b0081;
-  border: 1px solid #0b0081;
+/* Input Field Consistency and Focus: Minimal and Recessed */
+.tracker-input, .tracker-select {
+    padding: 12px 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    color: #1f2937;
+    /* Subtle off-white background */
+    background-color: #f9fafb; 
+    border: 1px solid #d1d5db; /* Clean border */
+    transition: all 0.2s ease;
+    flex-grow: 1;
+    min-width: 100px;
+    
+    /* Minimal inner shadow for a soft, recessed look */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06); 
 }
 
+.tracker-input:focus, .tracker-select:focus {
+    outline: none;
+    /* Clean focus ring using primary blue */
+    border-color: #1e3a8a;
+    box-shadow: 
+        0 0 0 3px #dbeafe; /* Light blue accent ring */
+    /* Remove scale transform on focus for a stable form */
+    transform: none; 
+    background-color: #ffffff;
+}
+
+/* Button Styling: Flat with Depth and Primary Branding */
 .transaction-form button {
-  padding: 5px 10px;
-  font-size: 16px;
-  border-radius: 10px;
-  margin-left: 8px;
-  height: 39px;
-  border: 1px solid #18ad1d;
-  background-color: #18ad1d;
-  color: #fff;
-  cursor: pointer;
-}
-
-.currency-filter {
-  padding: 5px 10px;
+  padding: 12px 20px;
+  font-size: 15px;
+  border-radius: 8px; 
+  font-weight: 600;
+  transition: all 0.2s ease;
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
-  gap: 180px;
-  flex: 1;
-}
-
-#currency {
-  padding: 5px 10px;
-  font-size: 16px;
-  border-radius: 3px;
-  background-color: #ffffff;
-  color: #0b0081;
-  border: 1px solid #ccc;
+  gap: 8px;
+  min-width: fit-content;
   cursor: pointer;
+  border: none;
+  text-transform: capitalize; /* More natural, less aggressive */
+  letter-spacing: 0.2px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-#currency:hover {
-  background-color: #f0f0f0;
+.transaction-form .add-btn {
+  /* Using deep green success color */
+  background: #059669;
+  color: #ffffff;
 }
 
-#currency:focus {
-  outline: none;
-  box-shadow: 0 0 2px 2px rgba(0, 123, 255, 0.3);
+.transaction-form .add-btn:hover {
+  background: #047857;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(5, 150, 105, 0.4);
 }
 
-.date-box {
-  text-align: center;
-  align-items: center;
-  margin-right: 5px;
-  padding: 0px;
-}
-#date {
-  padding: 5px 10px;
-  font-size: 16px;
-  border-radius: 3px;
-  background-color: #ffffff;
-  color: #0b0081;
-  border: 1px solid #ccc;
-  cursor: pointer;
-  float: right;
+.transaction-form .export-btn {
+    /* Muted secondary button */
+    background: #f3f4f6;
+    color: #1e3a8a; 
+    border: 1px solid #d1d5db;
+    box-shadow: none; /* Less emphasis */
 }
 
-.table-part {
-  overflow: hidden;
+.transaction-form .export-btn:hover {
+    background: #e5e7eb;
+    color: #1e3a8a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
+
+/* ==================================== */
+/* === TABLE STYLING: CLEAN AND SCANNABLE === */
+/* ==================================== */
 
 table {
   width: 100%;
-  border-collapse: separate;
+  border-collapse: separate; /* Use separate for clean rounded corners */
   border-spacing: 0;
-  background-color: #ffffff;
-  border-radius: 8px;
+  background-color: #ffffff; 
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.table-part.scrollable {
-  max-height: 160px;
-  overflow-y: scroll;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); 
 }
 
 th {
-  font-weight: bolder;
-  border-spacing: 0px;
+  font-weight: 600;
   color: #ffffff;
-  padding: 15px 10px;
-  min-width: none;
+  padding: 15px 20px; 
+  text-align: left;
+  background-color: #1e3a8a; /* Use primary blue */
+  border: none;
   position: sticky;
   top: 0;
-  text-align: left;
-  background-color: #0b0081;
-  border-top: 1px solid #ffffff;
-  border-bottom: 2px solid #ffffff;
-  border-right: 1px solid #ffffff;
-  z-index: 10;
-  font-size: 16px;
-}
-td {
-  padding: 15px 10px;
-  text-align: left;
-  color: #0b0081;
-  min-width: none;
-  font-weight: normal;
-  border-top: 1px solid #e5e7eb;
-  border-bottom: 1px solid #e5e7eb;
-  border-right: 1px solid #e5e7eb;
-  background-color: #ffffff;
+  z-index: 20;
   font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-th:last-child,
-td:last-child {
-  border-right: none;
+td {
+  padding: 15px 20px;
+  text-align: left;
+  color: #1f2937;
+  font-weight: 400;
+  border-top: 1px solid #f3f4f6; 
+  background-color: #ffffff;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+/* Zebra Striping: Subtle and professional */
+tr:nth-child(even) td {
+    background-color: #fcfdfe; 
+}
+
+/* Hover Effect */
+tr:hover td {
+    background-color: #f7faff; 
+}
+
+/* Action Buttons in Table: Cohesive Styling */
+.delete-button, .edit-button, .save-button {
+    font-size: 13px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .delete-button {
-  background-color: #f44336;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 3px;
-  cursor: pointer;
+    background-color: #dc2626;
+    color: #ffffff;
+}
+
+.delete-button:hover {
+    background-color: #b91c1c;
+    transform: translateY(-1px);
 }
 
 .edit-button {
-  background-color: #0375ff;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 3px;
-  margin-right: 5px;
-  cursor: pointer;
+    background-color: #f59e0b; /* Professional warning color */
+    color: #ffffff; 
+}
+
+.edit-button:hover {
+    background-color: #d97706;
+    transform: translateY(-1px);
 }
 
 .save-button {
-  background-color: #2cb530;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 3px;
-  cursor: pointer;
-  margin-left: 5px;
+    background-color: #059669;
+    color: #ffffff;
+}
+
+.save-button:hover {
+    background-color: #047857;
+    transform: translateY(-1px);
+}
+
+
+/* ==================================== */
+/* === RESPONSIVENESS (Optimized) === */
+/* ==================================== */
+
+@media (max-width: 900px) {
+  .tracker-part {
+      padding: 30px;
+      max-width: 100%;
+  }
+  .filter-controls {
+    /* Keep it clean on smaller desktops/tablets */
+    flex-wrap: wrap; 
+    justify-content: flex-start;
+    gap: 20px;
+  }
+  
+  .currency-filter, .date-filter {
+      width: auto;
+      justify-content: flex-start;
+  }
+  
+  .transaction-form {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .tracker-input, .tracker-select {
+    width: 47%; 
+    min-width: 150px;
+    margin-right: 0;
+  }
+  
+  .transaction-form button {
+    width: 47%;
+  }
+}
+
+@media (max-width: 600px) {
+    .tracker-part {
+        padding: 20px;
+    }
+    .transaction-form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .tracker-input, .tracker-select, .transaction-form button {
+        width: 100%; 
+        min-width: unset;
+    }
+    
+    .current-balance {
+        font-size: 42px;
+    }
+
+    th, td {
+        padding: 12px 15px;
+        font-size: 13px;
+    }
+}
+/* ==================================== */
+/* ===== SAVING TIPS CARD (Glass/Subtle) ============ */
+/* ==================================== */
+.saving-tips {
+  /* Using a subtle Glassmorphism effect on a potentially light background */
+  background: rgba(255, 255, 255, 0.7); 
+  border-radius: 12px;
+  padding: 25px 30px;
+  margin-bottom: 30px;
+  backdrop-filter: blur(5px);
+  /* Replacing strong neumorphic shadows with soft box-shadows */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: #1f2937; /* Ensure text is readable on light background */
+}
+
+.saving-tips:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.saving-tips h2 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #1e3a8a; /* Use primary blue for headings */
+}
+
+.saving-tips p {
+  font-size: 15px;
+  font-weight: 400;
+  color: #4b5563;
 }
 
 .arrow {
